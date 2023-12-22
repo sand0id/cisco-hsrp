@@ -18,11 +18,10 @@ class HsrpGroup:
         if self.priority < self.partner_priority and self.active:
             status_string = "Fail - No longer Standby"
 
-        to_print = {
+        return {
             "group" : group_string,
             "status" : status_string
         }
-        return to_print
 
 
 

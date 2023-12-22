@@ -6,7 +6,7 @@ from core.hsrpgroup import HsrpGroup
 class Device:
 
     # Device config defined statically for now, this would be via SSH CLI
-    # You can edit the response here
+    # You can edit the response here. Ideally move to unit test
     deviceConfig= {
         "1.1.1.1" : 
 """Interface   Grp  Pri P State   Active          Standby         Virtual IP
@@ -46,9 +46,7 @@ Gi0/0/1     2    110 P Active  local           82.0.0.10       82.0.0.9"""
     def inspect_partner(self, partner_hsrp_groups):
 
         # Find matching groups and set the partner priority
-        this_hsrp_group: HsrpGroup # Type hint
         for this_hsrp_group in self.hsrp_groups:
-            partner_hsrp_group: HsrpGroup # Type hint
             for partner_hsrp_group in partner_hsrp_groups:
                 if this_hsrp_group.group_id == partner_hsrp_group.group_id:
                     # Let this hsrp group know the priority of it's partner
@@ -59,10 +57,9 @@ Gi0/0/1     2    110 P Active  local           82.0.0.10       82.0.0.9"""
         hsrp_result = []
         for hsrp_group in self.hsrp_groups:
             hsrp_result.append(hsrp_group.print_hsrp())
-        to_print = {
+        return {
             self.name: hsrp_result
         }
-        return to_print
             
 
     

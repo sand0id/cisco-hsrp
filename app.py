@@ -51,7 +51,7 @@ def home():
         device_output.append(device.print_hsrp())
 
     return to_print
-        
+
 
 
 if __name__ == '__main__':
