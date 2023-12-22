@@ -11,7 +11,7 @@ class HsrpGroup:
         self.partner_priority = partner_priority
 
     def print_hsrp(self) -> dict:
-        group_string = f"Group {self.group_id}",
+        group_string = f"Group {self.group_id}"
         status_string = "Pass"
         if self.priority > self.partner_priority and not self.active:
             status_string = "Fail - No longer Active"
