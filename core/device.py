@@ -14,7 +14,7 @@ class Device:
                      |
 Interface   Grp  Pri P State   Active          Standby         Virtual IP
 Gi0/0/1     1    110 P Active  local           82.0.0.3        82.0.0.1
-Gi0/0/1     2    115 P Standby 82.0.0.11       local           82.0.0.9""",
+Gi0/0/1     2    105 P Standby 82.0.0.11       local           82.0.0.9""",
         "1.1.1.2" : 
 """                     P indicates configured to preempt.
                      |
